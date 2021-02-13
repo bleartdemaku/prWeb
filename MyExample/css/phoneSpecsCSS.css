@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: black;
+  }
+    
+  nav{
+      
+    width: 95%;
+    height: 5%;
+    position: sticky;
+    margin: 20px auto;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo{
+    flex-basis: 20%;
+  }
+  .logo img{
+    width: 150px;
+  }
+  .nav-links{
+    flex: 1;
+    text-align: right;
+    
+  }
+  .nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+  }
+  
+  .nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    
+  }
+
+  .photo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  #phone{
+    height: 380px;
+    width: 750px;
+  }
+  
+  .TextMain{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 20px;
+    
+  }
+  .text{
+    color: rgb(169, 169, 169);      /*nice color*/
+    line-height: 1.5;
+  }
+
+ #one{
+  margin-bottom: 1.5em ;
+ }
+ #two{
+  margin-bottom: 1.5em ;
+ }
+ #three{
+  margin-bottom: 1.5em ;
+ }
+
+ .photo2{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 20px;
+}
+#phone2{
+  height: 380px;
+  width: 750px;
+}
+.TextMain2{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 20px;
+  
+}
+.text2{
+  color: rgb(169, 169, 169); 
+  line-height: 1.5;
+}
+#four{
+  margin-bottom: 1.5em ;
+ }
+ #five{
+  margin-bottom: 1.5em ;
+ }
+ #six{
+  margin-bottom: 1.5em ;
+ }
+
+ .Specifications{
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: left;
+ }
+ .Specs{
+  color: rgb(169, 169, 169); 
+  line-height: 1.5;
+ }
+ .SpecsTitle{
+  color: rgb(169, 169, 169); 
+  margin-bottom: 1em;
+ }
+
+ .Sustainablilty{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 20px;
+  
+}
+.SusText{
+  color: rgb(169, 169, 169); 
+  line-height: 1.5;
+}
+.SusTitle{
+  color: rgb(169, 169, 169); 
+  line-height: 1.5;
+}
+#eight{
+  margin-bottom: 1.5em ;
+ }
+#nine{
+  margin-bottom: 1.5em ;
+}
+
+.photo3{
+  display: block;
+  width: 50%;
+}
+#phone3{
+  height: 380px;
+  width: 750px;
+}
+.IOS14{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+.ios{
+  color: rgb(169, 169, 169); 
+  line-height: 1.5;
+}
+.iostext{
+  color: rgb(169, 169, 169); 
+  line-height: 1.5;
+}
+#ten{
+  margin-bottom: 1.5em ;
+ }
+#eleven{
+  margin-bottom: 1.5em ;
+}
+.photo4{
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+  width: 50%;
+}
+#phone4{
+  height: 380px;
+  width: 750px;
+  display: block;
+}
+.Camera{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+.cam{
+  color: rgb(169, 169, 169); 
+  line-height: 1.5;
+}
+.camtext{
+  color: rgb(169, 169, 169); 
+  line-height: 1.5;
+}
+#twelve{
+  margin-bottom: 1.5em ;
+ }
+#thirteen{
+  margin-bottom: 1.5em ;
+}
+#fourteen{
+  margin-bottom: 1.5em ;
+}
+#fiveteen{
+  margin-bottom: 1.5em ;
+}
+#sixteen{
+  margin-bottom: 1.5em ;
+}
+#seventeen{
+  margin-bottom: 1.5em ;
+}
+#eighteen{
+  margin-bottom: 1.5em ;
+}
+.photo5{
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+  width: 50%;
+}
+#phone5{
+  height: 380px;
+  width: 750px;
+  display: block;
+}
+.footer {
+  height: 180px;
+  width: 80%;
+  margin: auto;
+  color: white;
+}
+
+.footer div {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+  margin-top: 4%;
+  height: 100px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+}
+.footer .adress {
+  margin-left: 10%;
+}
+.footer .vertical_line {
+  border-left: 1px solid rgb(169, 169, 169);
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  width: 10px;
+}
