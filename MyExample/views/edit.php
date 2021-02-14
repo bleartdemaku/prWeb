@@ -22,6 +22,8 @@ if (isset($_GET['id'])) {
     </form>
 </div>
 
+
+
 <?php
 include '../components/footer.php';
 ?>

@@ -3,15 +3,18 @@ require 'variables.php';
 include_once 'adminClass.php';
 include_once 'simpleUserClass.php';
 require_once 'userMapper.php';
+
 session_start();
 //main
 if (isset($_POST['login-btn'])) {
     $login = new LoginLogic($_POST);
     $login->verifyData();
-} else if (isset($_POST['register-btn'])) {
+} 
+else if (isset($_POST['register-btn'])) {
     $register = new RegisterLogic($_POST);
     $register->insertData();
-} else {
+}
+else {
     header("Location:../views/index.php");
 }
 
@@ -88,3 +91,4 @@ class RegisterLogic
         header("Location:../views/index.php");
     }
 }
+

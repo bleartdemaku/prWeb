@@ -29,7 +29,7 @@ class DatabaseMySQLiConfiguration
 
     private $host = "localhost";
     private $username = "root";
-    private $dbName = "Ushtrimi13";
+    private $dbName = "ushtrimi13";
     private $password = "";
 
     public function __construct()

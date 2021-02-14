@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  body{
+    background-image: url("../images/fotojaMain.jpg");
+  }
+  .main{
+      margin-top: -50px;
+  }
+  nav{
+    width: 95%;
+    height: 5%;
+    position: sticky;
+    margin: 20px auto;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+  }
+  .nav-links{
+    flex: 1;
+    text-align: right;
+    
+  }
+  .nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+  }
+  
+  .nav-links ul li a{
+    color: black;
+    text-decoration: none;
+    
+  }
+  
+  .container{
+    text-align: center;
+    padding-top: 150px;
+  width: 550px;
+  left: 30%;
+  min-height: 270px;
+  height: 650px;
+  position: relative;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  
+  }
+
+  .main-form:before{
+    position: absolute;
+    background: rgba(7, 223, 212, 0.5);
+    filter:blur(4px);
+    -o-filter:blur(4px);
+    -ms-filter:blur(4px);
+    -moz-filter:blur(4px);
+    -webkit-filter: blur(4px);
+    content: '';
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 550px;
+    height: 600px;
+    z-index: -1;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #01708b;
+    margin-top: 50px;
+  }
+
+  .table-form{
+    position: relative;
+  }
+
+  h1 {
+    padding:16px;
+    font-size:22px;
+    color:black;
+    text-align: center;
+  }
+
+  .form-group{
+    position: relative;
+    margin-bottom:20px;
+  }
+  
+  .gt-input{
+    width:300px;
+    height:48px;
+    padding:0 20px;
+    font-size:20px;
+    border:0;
+  }
+  .gt-text {
+    padding:10px 20px;
+    height:100px;
+    width:300px;
+    font-family:"Roboto";
+    font-size:20px;
+  }
+  
+  .gt-input:focus {
+    outline:none;
+  }
+  
+  label {
+    position: absolute;
+    font-size:18px;
+    color:#aaa;
+    transition: all .4s;
+    top:24px;
+    transform:translateY(-50%);
+    margin-left:24px;
+    cursor:text;
+    z-index: 1;
+  }
+  
+  .gt-button {
+    width:350px;
+    height:60px;
+    font-size:20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border:0;
+    color:white;
+    background:#00485a;
+    transition:.4s;
+    cursor: pointer;
+  }
+  
+  .gt-button:hover {
+    background:#01708b;
+  }
+  
+  .form-status {
+    padding:8px;
+    text-align: center;
+    color:white;
+    margin-top:8px;
+    margin-bottom:-24px;
+  }
+  
+  .move-up {
+    margin-top:-32px;
+    margin-left:0px;
+    font-size:14px;
+    background:#ff0000;
+    border-radius:8px 0;
+    color:white;
+    padding:4px 8px;
+    min-width:100px;
+  }
+  

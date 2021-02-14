@@ -2,41 +2,103 @@
 include '../components/header.php'
 ?>
 
+<?php 
+
+$dbHost = "localhost";
+$dbUser = "root";
+$dbPassword = "";
+$dbName = "ushtrimi13";
+
+
+
+try {
+  $dsn = "mysql:host=" . $dbHost . ";dbname=" . $dbName;
+  $pdo = new PDO($dsn, $dbUser, $dbPassword);
+} catch(PDOException $e) {
+  echo "DB Connection Failed: " . $e->getMessage();
+}
+
+$status = "";
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $message = $_POST['message'];
+
+  if(empty($name) || empty($email) || empty($message)) {
+    $status = "All fields are not completed";
+  } else {
+    if(strlen($name) >= 255 || !preg_match("/^[a-zA-Z-'\s]+$/", $name)) {
+      $status = "Please enter a valid name";
+    } else if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $status = "Please enter a valid email";
+    } else {
+
+      $sql = "INSERT INTO contactinfo (name, email, message) VALUES (:name, :email, :message)";
+
+      $stmt = $pdo->prepare($sql);
+      
+      $stmt->execute(['name' => $name, 'email' => $email, 'message' => $message]);
+
+      $status = "Your message was sent";
+      $name = "";
+      $email = "";
+      $message = "";
+    }
+  }
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Contact us</title>
-	<link rel="stylesheet" href="../css/contactus.css">
-	<script src="scripts.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <link rel="stylesheet" href="../css/contactUs.css">
+  <title>Contact Us</title>
 </head>
+
 <body>
-    <div class="main">
-<div class="wrapper">
-  <h2>Contact us</h2>
-  <div id="error_message"></div>
-  <form id="myform" action = '' onsubmit="return validate();">
-    <div class="input_field">
-        <input type="text" placeholder="Name" name="name">
-    </div>
-    <div class="input_field">
-        <input type="text" placeholder="Subject" name="subject">
-    </div>
-    <div class="input_field">
-        <input type="text" placeholder="Phone" name="phone">
-    </div>
-    <div class="input_field">
-        <input type="text" placeholder="Email" name="email">
-    </div>
-    <div class="input_field">
-        <textarea placeholder="Message" name="message"></textarea>
-    </div>
-    <div class="btn">
-        <input type="submit">
-    </div>
-  </form>
-</div>
-</div>
+
+  <div class="container">
+    <h1>Contact Us Here</h1>
+
+    <form action="" method="POST" class="main-form">
+      <div class="form-group">
+        
+        <input type="text" name="name" id="name" class="gt-input" placeholder = 'name...'
+          value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $name ?>">
+      </div>
+
+      <div class="form-group">
+        
+        <input type="text" name="email" id="email" class="gt-input" placeholder = 'email...'
+          value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $email ?>">
+      </div>
+
+      <div class="form-group">
+        
+        <textarea name="message" id="message" cols="30" rows="10" placeholder = 'message...'
+          class="gt-input gt-text"><?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $message ?></textarea>
+      </div>
+
+      <input type="submit" class="gt-button" value="Submit">
+
+      <div class="form-status">
+        <?php echo $status ?>
+      </div>
+    </form>
+  </div>
+
+  <script src="mainC.js"></script>
 
 </body>
+
 </html>
+<?php
+include '../components/footer.php'
+?>

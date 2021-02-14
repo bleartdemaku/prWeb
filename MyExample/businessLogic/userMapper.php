@@ -80,4 +80,37 @@ class UserMapper extends DatabasePDOConfiguration
         $statement->bindParam(":id", $userId);
         $statement->execute();
     }
+
+     public function insertContactForm(SimpleUser $user){
+        $this->query = "insert into contactinfo (name, email, message) values (:name,:email,:message)";
+        $statement = $this->conn->prepare($this->query);
+        $name = $user->getName();
+        $email = $user->getEmail();
+        $message = $user->getMessage();
+
+
+        $statement->bindParam(":name", $name);
+        $statement->bindParam(":email", $email);
+        $statement->bindParam(":message", $message);
+
+        $statement->execute();
+    }
+
+    public function getAllContact()
+    {
+        $this->query = "select * from contactinfo";
+        $statement = $this->conn->prepare($this->query);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+    
+    public function deleteContact($userId)
+    {
+        $this->query = "delete from contactinfo where id=:id";
+        $statement = $this->conn->prepare($this->query);
+        $statement->bindParam(":id", $userId);
+        $statement->execute();
+    }
+
 }
